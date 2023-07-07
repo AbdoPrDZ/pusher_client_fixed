@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
-import '../../pusher_client.dart';
+import '../../pusher_client_fixed.dart';
 import '../contracts/stream_handler.dart';
 import '../models/event_stream_result.dart';
 

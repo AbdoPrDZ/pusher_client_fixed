@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:pusher_client/pusher_client.dart';
+import 'package:pusher_client_fixed/pusher_client_fixed.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,4 +1,4 @@
-import '../../pusher_client.dart';
+import '../../pusher_client_fixed.dart';
 
 part 'pusher_options.g.dart';
 

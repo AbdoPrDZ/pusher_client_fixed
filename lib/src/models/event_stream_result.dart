@@ -1,4 +1,4 @@
-import '../../pusher_client.dart';
+import '../../pusher_client_fixed.dart';
 import 'connection_error.dart';
 import 'connection_state_change.dart';
 
