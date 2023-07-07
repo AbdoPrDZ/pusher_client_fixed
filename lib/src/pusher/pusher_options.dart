@@ -1,4 +1,4 @@
-import 'package:pusher_client/src/pusher/pusher_auth.dart';
+import '../../pusher_client.dart';
 
 part 'pusher_options.g.dart';
 

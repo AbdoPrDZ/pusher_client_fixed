@@ -1,4 +1,4 @@
-library pusher_client;
+library pusher_client_fixed;
 
 export 'src/pusher/channel.dart';
 export 'src/pusher/pusher_auth.dart';

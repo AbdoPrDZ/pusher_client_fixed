@@ -1,6 +1,6 @@
-import 'package:pusher_client/src/models/connection_error.dart';
-import 'package:pusher_client/src/models/connection_state_change.dart';
-import 'package:pusher_client/src/pusher/pusher_event.dart';
+import '../../pusher_client.dart';
+import 'connection_error.dart';
+import 'connection_state_change.dart';
 
 part 'event_stream_result.g.dart';
 

@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:pusher_client/pusher_client.dart';
-import 'package:pusher_client/src/contracts/stream_handler.dart';
-import 'package:pusher_client/src/models/connection_error.dart';
-import 'package:pusher_client/src/models/connection_state_change.dart';
-import 'package:pusher_client/src/models/event_stream_result.dart';
-import 'package:pusher_client/src/pusher/channel.dart';
+
+import '../../pusher_client.dart';
+import '../contracts/stream_handler.dart';
+import '../models/connection_error.dart';
+import '../models/connection_state_change.dart';
+import '../models/event_stream_result.dart';
 
 part 'pusher_client.g.dart';
 
