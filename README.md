@@ -1,4 +1,4 @@
-# Pusher Channels Flutter Client
+# Pusher Channels Flutter Client (Fixed Version)
 
 [![pub version](https://img.shields.io/pub/v/pusher_client.svg?logo=dart)](https://pub.dartlang.org/packages/pusher_client)
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/chinloyal/pusher_client/master/LICENSE)
