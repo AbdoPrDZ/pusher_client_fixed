@@ -1,9 +1,9 @@
 # Pusher Channels Flutter Client (Fixed Version)
 
-[![pub version](https://img.shields.io/pub/v/pusher_client.svg?logo=dart)](https://pub.dartlang.org/packages/pusher_client)
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/chinloyal/pusher_client/master/LICENSE)
+[![pub version](https://img.shields.io/pub/v/pusher_client_fixed.svg?logo=dart)](https://pub.dartlang.org/packages/pusher_client_fixed)
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/AbdoPrDZ/pusher_client_fixed/main/LICENSE)
 ![Languages](https://img.shields.io/badge/languages-dart%20%7C%20kotlin%20%7C%20swift-blueviolet.svg)
-[![Twitter](https://img.shields.io/badge/twitter-@chinloyal-blue.svg?style=flat&logo=twitter)](https://twitter.com/chinloyal)
+[![Twitter](https://img.shields.io/badge/twitter-@abdo_pr_21347-blue.svg?style=flat&logo=twitter)](https://twitter.com/abdo_pr_21347)
 
 A Pusher Channels client plugin for Flutter targeting Android and iOS. It wraps
 [pusher-websocket-java](https://github.com/pusher/pusher-websocket-java) v2.2.5 and [pusher-websocket-swift](https://github.com/pusher/pusher-websocket-swift) v8.0.0.
@@ -110,6 +110,14 @@ Then in `android/app/proguard-rules.pro`:
 ```pro
 -keep class com.github.chinloyal.pusher_client.** { *; }
 ```
+
+If you got error like that:
+```java
+java.io.IOException: Cleartext HTTP traffic to 192.168.1.105 not permitted
+...
+```
+
+just follow this solution on [StackOverFlow](https://stackoverflow.com/questions/45940861/android-8-cleartext-http-traffic-not-permitted).
 
 
 ## API Overview

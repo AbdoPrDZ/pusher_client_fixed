@@ -136,7 +136,7 @@ class PusherService : MChannel {
 
     private fun subscribe(call: MethodCall, result: Result) {
         try {
-            val src = call.arguments as Map<String, Any>
+            val src = call.arguments as? Map<String, Any>
             val args = JSONObject(src)
             val channelName: String = args.getString("channelName")
 
@@ -173,7 +173,7 @@ class PusherService : MChannel {
 
     private fun unsubscribe(call: MethodCall, result: Result) {
         try {
-            val src = call.arguments as Map<String, Any>
+            val src = call.arguments as? Map<String, Any>
             val args = JSONObject(src);
             val channelName = args.getString("channelName")
 
@@ -193,7 +193,7 @@ class PusherService : MChannel {
      */
     private fun bind(call: MethodCall, result: Result) {
         try {
-            val src = call.arguments as Map<String, Any>
+            val src = call.arguments as? Map<String, Any>
             val args = JSONObject(src)
             val channelName: String = args.getString("channelName")
             val eventName: String = args.getString("eventName")
@@ -228,7 +228,7 @@ class PusherService : MChannel {
 
     private fun unbind(call: MethodCall, result: Result) {
         try {
-            val src = call.arguments as Map<String, Any>
+            val src = call.arguments as? Map<String, Any>
             val args = JSONObject(src)
             val channelName: String = args.getString("channelName")
             val eventName: String = args.getString("eventName")

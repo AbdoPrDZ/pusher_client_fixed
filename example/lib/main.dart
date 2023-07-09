@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:pusher_client_fixed/pusher_client_fixed.dart';
 
@@ -7,103 +5,88 @@ void main() {
   runApp(MyApp());
 }
 
+const String appId = "PUSHER_APP_ID";
+const String key = "037c47e0cbdc81fb7144";
+const String cluster = "mt1";
+const String hostEndPoint = "192.168.1.105";
+const String hostAuthEndPoint = "http://$hostEndPoint/broadcasting/auth";
+const String token = "34|yzWaxwGZz75Xqk4tXviP4uhAc0sVB14OLVXEmoxg";
+const int port = 6001;
+const String channelName = 'private-messages';
+const String eventName = 'MessageCreatedEvent';
+
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  late PusherClient pusher;
+  late PusherClient pusherClient;
   late Channel channel;
 
   @override
   void initState() {
     super.initState();
+    initPusher();
+  }
 
-    String token = getToken();
-
-    pusher = new PusherClient(
-      "app-key",
+  void initPusher() {
+    pusherClient = PusherClient(
+      key,
       PusherOptions(
-        // if local on android use 10.0.2.2
-        host: 'localhost',
-        encrypted: false,
+        host: hostEndPoint,
+        encrypted: true,
+        cluster: cluster,
+        wsPort: port,
         auth: PusherAuth(
-          'http://example.com/broadcasting/auth',
+          hostAuthEndPoint,
           headers: {
             'Authorization': 'Bearer $token',
           },
         ),
       ),
+      autoConnect: false,
       enableLogging: true,
     );
 
-    channel = pusher.subscribe("private-orders");
+    channel = pusherClient.subscribe(channelName);
 
-    pusher.onConnectionStateChange((state) {
-      log("previousState: ${state?.previousState}, currentState: ${state?.currentState}");
+    channel.bind(eventName, (event) {
+      print(event?.data);
     });
 
-    pusher.onConnectionError((error) {
-      log("error: ${error?.message}");
+    pusherClient.connect();
+
+    pusherClient.onConnectionStateChange((state) {
+      print(
+        "previousState: ${state?.previousState}, currentState: ${state?.currentState}",
+      );
     });
 
-    channel.bind('status-update', (event) {
-      log(event?.data ?? '');
-    });
-
-    channel.bind('order-filled', (event) {
-      log("Order Filled Event ${event?.data}");
+    pusherClient.onConnectionError((error) {
+      print("error: ${error?.message}");
     });
   }
-
-  String getToken() => "super-secret-token";
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Example Pusher App'),
+          title: const Text('Flutter Pusher Client Example'),
         ),
-        body: Center(
-            child: Column(
-          children: [
-            ElevatedButton(
-              child: Text('Unsubscribe Private Orders'),
-              onPressed: () {
-                pusher.unsubscribe('private-orders');
-              },
-            ),
-            ElevatedButton(
-              child: Text('Unbind Status Update'),
-              onPressed: () {
-                channel.unbind('status-update');
-              },
-            ),
-            ElevatedButton(
-              child: Text('Unbind Order Filled'),
-              onPressed: () {
-                channel.unbind('order-filled');
-              },
-            ),
-            ElevatedButton(
-              child: Text('Bind Status Update'),
-              onPressed: () {
-                channel.bind('status-update', (event) {
-                  log("Status Update Event ${event?.data}");
-                });
-              },
-            ),
-            ElevatedButton(
-              child: Text('Trigger Client Typing'),
-              onPressed: () {
-                channel.trigger('client-istyping', {'name': 'Bob'});
-              },
-            ),
-          ],
-        )),
+        body: const Center(
+          child: Text('Listening to Pusher events...'),
+        ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    // channel.unbind(eventName); // Replace with your event name
+    pusherClient.unsubscribe(channelName); // Replace with your channel name
+    pusherClient.disconnect();
+    super.dispose();
   }
 }
