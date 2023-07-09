@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:pusher_client_fixed/pusher_client_fixed.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-const String appId = "PUSHER_APP_ID";
+const String appId = "1321495";
 const String key = "037c47e0cbdc81fb7144";
 const String cluster = "mt1";
 const String hostEndPoint = "192.168.1.105";
@@ -16,8 +16,10 @@ const String channelName = 'private-messages';
 const String eventName = 'MessageCreatedEvent';
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
-  _MyAppState createState() => _MyAppState();
+  createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
