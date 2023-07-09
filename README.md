@@ -3,7 +3,7 @@
 [![pub version](https://img.shields.io/pub/v/pusher_client_fixed.svg?logo=dart)](https://pub.dartlang.org/packages/pusher_client_fixed)
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/AbdoPrDZ/pusher_client_fixed/main/LICENSE)
 ![Languages](https://img.shields.io/badge/languages-dart%20%7C%20kotlin%20%7C%20swift-blueviolet.svg)
-[![Twitter](https://img.shields.io/badge/twitter-@abdo_pr_21347-blue.svg?style=flat&logo=twitter)](https://twitter.com/abdo_pr_21347)
+[![Twitter](https://img.shields.io/badge/twitter-@Abdo_Pr_2137-blue.svg?style=flat&logo=twitter)](https://twitter.com/Abdo_Pr_2137)
 
 A Pusher Channels client plugin for Flutter targeting Android and iOS. It wraps
 [pusher-websocket-java](https://github.com/pusher/pusher-websocket-java) v2.2.5 and [pusher-websocket-swift](https://github.com/pusher/pusher-websocket-swift) v8.0.0.
