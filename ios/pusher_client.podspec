@@ -9,9 +9,9 @@ libraryVersion = pubspec['version'].gsub('+', '-')
 Pod::Spec.new do |s|
   s.name             = 'pusher_client'
   s.version          = libraryVersion
-  s.summary          = 'A pusher client plugin.'
+  s.summary          = 'A pusher client fixed plugin.'
   s.description      = <<-DESC
-A pusher client plugin that works.
+A pusher client fixed plugin that works.
                        DESC
   s.homepage         = 'https://github.com/chinloyal/pusher_client'
   s.license          = { :file => '../LICENSE', :type => 'MIT' }
