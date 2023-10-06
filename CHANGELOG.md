@@ -47,4 +47,4 @@
 
 ## 0.0.2+1
 
-- Upgrade Kotlin SDK version.
+- Upgrade Flutter SDK version.
