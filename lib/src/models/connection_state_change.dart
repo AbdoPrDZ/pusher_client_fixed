@@ -9,7 +9,7 @@ class ConnectionStateChange {
   /// from.
   final String? previousState;
 
-  ConnectionStateChange({
+  const ConnectionStateChange({
     this.currentState,
     this.previousState,
   });

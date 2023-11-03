@@ -3,12 +3,12 @@
 part of 'connection_state_change.dart';
 
 ConnectionStateChange _$ConnectionStateChangeFromJson(
-    Map<String, dynamic> json) {
-  return ConnectionStateChange(
-    currentState: json['currentState'] as String?,
-    previousState: json['previousState'] as String?,
-  );
-}
+  Map<String, dynamic> json,
+) =>
+    ConnectionStateChange(
+      currentState: json['currentState'] as String?,
+      previousState: json['previousState'] as String?,
+    );
 
 Map<String, dynamic> _$ConnectionStateChangeToJson(
         ConnectionStateChange instance) =>

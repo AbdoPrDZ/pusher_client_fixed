@@ -17,13 +17,9 @@ abstract class StreamHandler {
 
   /// This method will close the entire event channel stream
   /// which is why it should only be used by [PusherClient]
-  void cancelEventChannelStream() {
-    _eventStreamSubscription.cancel();
-  }
+  void cancelEventChannelStream() => _eventStreamSubscription.cancel();
 
-  void _eventHandler(event) {
-    _listeners.values.forEach((method) {
+  void _eventHandler(event) => _listeners.values.forEach((method) {
       method(event);
     });
-  }
 }

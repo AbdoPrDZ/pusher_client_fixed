@@ -75,22 +75,17 @@ class PusherClient extends StreamHandler {
   /// re-registered with the server automatically on reconnection. This means
   /// that subscriptions may also be registered before `connect()` is called,
   /// they will be initiated on connection.
-  Channel subscribe(String channelName) {
-    return Channel(channelName);
-  }
+  Channel subscribe(String channelName) => Channel(channelName);
 
   /// Unsubscribes from a channel using the name of the channel.
-  Future<void> unsubscribe(String channelName) async {
-    await _channel.invokeMethod('unsubscribe', {
-      'channelName': channelName,
-    });
-  }
+  Future<void> unsubscribe(String channelName) =>
+      _channel.invokeMethod('unsubscribe', {
+        'channelName': channelName,
+      });
 
   /// Initiates a connection attempt using the client's
   /// existing connection details
-  Future connect() async {
-    await _channel.invokeMethod('connect');
-  }
+  Future connect() => _channel.invokeMethod('connect');
 
   /// Disconnects the client's connection
   Future disconnect() async {
@@ -106,16 +101,15 @@ class PusherClient extends StreamHandler {
   /// connection changes. The state typically changes during connection
   /// to Pusher and during disconnection and reconnection.
   void onConnectionStateChange(
-      void Function(ConnectionStateChange? state) callback) {
-    _onConnectionStateChange = callback;
-  }
+    void Function(ConnectionStateChange? state) callback,
+  ) =>
+      _onConnectionStateChange = callback;
 
   /// Callback that indicates either:
   /// - An error message has been received from Pusher, or
   /// - An error has occurred in the client library.
-  void onConnectionError(void Function(ConnectionError? error) callback) {
-    _onConnectionError = callback;
-  }
+  void onConnectionError(void Function(ConnectionError? error) callback) =>
+      _onConnectionError = callback;
 
   Future<void> _eventHandler(event) async {
     var result = EventStreamResult.fromJson(jsonDecode(event.toString()));
@@ -137,9 +131,7 @@ class PusherClient extends StreamHandler {
 class InitArgs {
   final bool? enableLogging;
 
-  InitArgs({
-    this.enableLogging,
-  });
+  const InitArgs({this.enableLogging});
 
   Map<String, dynamic> toJson() => _$InitArgsToJson(this);
 }

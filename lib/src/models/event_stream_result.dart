@@ -9,7 +9,7 @@ class EventStreamResult {
   final ConnectionError? connectionError;
   final PusherEvent? pusherEvent;
 
-  EventStreamResult({
+  const EventStreamResult({
     this.connectionStateChange,
     this.connectionError,
     this.pusherEvent,

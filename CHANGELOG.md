@@ -48,3 +48,7 @@
 ## 0.0.2+1
 
 - Upgrade Flutter SDK version.
+
+## 0.0.2+2
+
+- Clean the code.

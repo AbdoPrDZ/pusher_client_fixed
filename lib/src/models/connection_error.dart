@@ -10,7 +10,7 @@ class ConnectionError {
   /// The exception that was thrown, if any. Can be null.
   final String? exception;
 
-  ConnectionError({this.message, this.code, this.exception});
+  const ConnectionError({this.message, this.code, this.exception});
 
   factory ConnectionError.fromJson(Map<String, dynamic> json) =>
       _$ConnectionErrorFromJson(json);

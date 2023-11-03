@@ -16,7 +16,7 @@ class PusherEvent {
   /// client event on presence channels.
   final String? userId;
 
-  PusherEvent({
+  const PusherEvent({
     this.channelName,
     this.eventName,
     this.data,

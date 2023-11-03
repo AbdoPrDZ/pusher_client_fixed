@@ -21,11 +21,9 @@ class Channel extends StreamHandler {
     _subscribe();
   }
 
-  void _subscribe() {
-    _mChannel.invokeMethod('subscribe', {
-      'channelName': name,
-    });
-  }
+  void _subscribe() => _mChannel.invokeMethod('subscribe', {
+        'channelName': name,
+      });
 
   /// Binds a callback ([onEvent]) to an event. The
   /// callback will be notified whenever the specified

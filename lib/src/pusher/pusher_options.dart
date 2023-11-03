@@ -44,7 +44,7 @@ class PusherOptions {
   /// This property sets the maximum in between two reconnection attempts.
   final int? maxReconnectGapInSeconds;
 
-  PusherOptions({
+  const PusherOptions({
     this.auth,
     this.cluster,
     this.host = "ws.pusherapp.com",

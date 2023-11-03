@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:pusher_client_fixed/pusher_client_fixed.dart';
 
@@ -8,10 +10,9 @@ void main() {
 const String appId = "1321495";
 const String key = "037c47e0cbdc81fb7144";
 const String cluster = "mt1";
-const String hostEndPoint = "192.168.1.105";
+const String hostEndPoint = "172.17.96.1";
 const String hostAuthEndPoint = "http://$hostEndPoint/broadcasting/auth";
-const String token = "34|yzWaxwGZz75Xqk4tXviP4uhAc0sVB14OLVXEmoxg";
-const int port = 6001;
+const String token = "2|2gAA0Z1w43jasatIFaw0MD3H8LSDeGIoK2sCtTDw6ac6eb51";
 const String channelName = 'private-messages';
 const String eventName = 'MessageCreatedEvent';
 
@@ -35,38 +36,36 @@ class _MyAppState extends State<MyApp> {
   void initPusher() {
     pusherClient = PusherClient(
       key,
-      PusherOptions(
-        host: hostEndPoint,
-        encrypted: true,
+      const PusherOptions(
+        // host: hostEndPoint,
+        // encrypted: true,
         cluster: cluster,
-        wsPort: port,
         auth: PusherAuth(
           hostAuthEndPoint,
-          headers: {
-            'Authorization': 'Bearer $token',
-          },
+          headers: {'Authorization': 'Bearer $token'},
         ),
       ),
       autoConnect: false,
       enableLogging: true,
     );
 
-    channel = pusherClient.subscribe(channelName);
-
-    channel.bind(eventName, (event) {
-      print(event?.data);
-    });
-
     pusherClient.connect();
 
     pusherClient.onConnectionStateChange((state) {
-      print(
-        "previousState: ${state?.previousState}, currentState: ${state?.currentState}",
+      log(
+        "previousState: ${state?.previousState}, currentState: ${state?.currentState}, socketId: ${pusherClient.getSocketId()}",
       );
+      if (state?.currentState == 'CONNECTED') {
+        channel = pusherClient.subscribe(channelName);
+
+        channel.bind(eventName, (event) {
+          log('${event?.data}');
+        });
+      }
     });
 
     pusherClient.onConnectionError((error) {
-      print("error: ${error?.message}");
+      log("error: ${error?.message}");
     });
   }
 

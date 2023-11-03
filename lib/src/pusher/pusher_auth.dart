@@ -7,7 +7,7 @@ class PusherAuth {
   /// Additional headers to be sent as part of the request.
   final Map<String, String>? headers;
 
-  PusherAuth(
+  const PusherAuth(
     this.endpoint, {
     this.headers = const {'Content-Type': 'application/json'},
   });
