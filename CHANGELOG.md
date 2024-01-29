@@ -52,3 +52,7 @@
 ## 0.0.2+2
 
 - Clean the code.
+
+## 0.0.2+3
+
+- Update Flutter SDK version
