@@ -7,7 +7,7 @@ pubspec = YAML.load_file(File.join('..', 'pubspec.yaml'))
 libraryVersion = pubspec['version'].gsub('+', '-')
 
 Pod::Spec.new do |s|
-  s.name             = 'pusher_client'
+  s.name             = 'pusher_client_fixed'
   s.version          = libraryVersion
   s.summary          = 'A pusher client fixed plugin.'
   s.description      = <<-DESC
@@ -19,7 +19,7 @@ A pusher client fixed plugin that works.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'PusherSwiftWithEncryption', '~> 8.0.0'
+  s.dependency 'PusherSwift', '~> 9.0'
   s.platform = :ios, '9.0'
 
   # Flutter.framework does not contain a i386 slice.
