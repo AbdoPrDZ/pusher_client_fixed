@@ -6,7 +6,7 @@
 //
 
 import Flutter
-import PusherSwift
+import PusherSwiftWithEncryption
 
 class PusherService: MChannel {
     static let CHANNEL_NAME = "com.github.chinloyal/pusher_client"

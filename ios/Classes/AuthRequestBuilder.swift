@@ -5,7 +5,7 @@
 //  Created by Romario Chinloy on 10/27/20.
 //
 
-import PusherSwift
+import PusherSwiftWithEncryption
 
 class AuthRequestBuilder: AuthRequestBuilderProtocol {
     let pusherAuth: PusherAuth
