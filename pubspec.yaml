@@ -2,12 +2,12 @@ name: pusher_client_fixed
 description: |
   A Pusher Channels client plugin for Flutter targeting Android and iOS. It 
   wraps pusher-websocket-java v2.2.5 and pusher-websocket-swift v8.0.0.
-version: 0.0.2+3
+version: 0.0.3
 homepage: https://github.com/AbdoPrDZ/pusher_client_fixed.git
 documentation: https://github.com/chinloyal/pusher_client/blob/master/README.md
 
 environment:
-  sdk: ">=3.2.3 <4.0.0"
+  sdk: ">=3.3.1 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:

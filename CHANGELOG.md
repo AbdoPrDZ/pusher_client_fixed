@@ -33,7 +33,7 @@
 
 ---
 
-## Abdo Pr Part
+## AbdoPrDZ Part
 
 - This My Changes part
 
@@ -56,3 +56,8 @@
 ## 0.0.2+3
 
 - Update Flutter SDK version
+
+## 0.0.3 - March 22, 2024
+
+- Fix iOS - revert to PusherSwiftWithEncryption by (dragosholban | Dragos Holban).
+- Upgrade Flutter SDK version.
