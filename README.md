@@ -10,7 +10,7 @@ A Pusher Channels client plugin for Flutter targeting Android and iOS. It wraps
 
 For tutorials and more in-depth information about Pusher Channels, visit the [official docs](https://pusher.com/docs/channels).
 
-This client works with official pusher servers and laravel self hosted pusher websocket server ([laravel-websockets](https://github.com/beyondcode/laravel-websockets)). 
+This client works with official pusher servers and laravel self hosted pusher websocket server ([laravel-websockets](https://github.com/beyondcode/laravel-websockets)).
 
 ## Supported Platforms & Deployment Targets
 
@@ -21,31 +21,32 @@ This client works with official pusher servers and laravel self hosted pusher we
 
 - [Installation](#installation)
 - [Configuration](#configuration)
-    - [For iOS](#for-ios)
-    - [For Android](#for-android)
+  - [For iOS](#for-ios)
+  - [For Android](#for-android)
 - [API Overview](#api-overview)
 - [The Pusher Constructor](#the-pusher-constructor)
 - [Pusher Options Config](#pusher-options-config)
 - [Reconnecting](#reconnecting)
 - [Disconnecting](#disconnecting)
 - [Subscribing To Channels](#subscribing-to-channels)
-    - [Public Channels](#public-channels)
-    - [Private Channels](#private-channels)
-	- [Private Encrypted Channels](#private-encrypted-channels)
-	- [Presence Channels](#presence-channels)
+  - [Public Channels](#public-channels)
+  - [Private Channels](#private-channels)
+  - [Private Encrypted Channels](#private-encrypted-channels)
+  - [Presence Channels](#presence-channels)
 - [Binding To Events](#bindings-to-events)
-    - [Callback Parameters](#callback-parameters)
-    - [Unbind Channel Events](#unbind-channel-events)
+  - [Callback Parameters](#callback-parameters)
+  - [Unbind Channel Events](#unbind-channel-events)
 - [Triggering Client Events](#triggering-client-events)
 - [Accessing The Connection Socket ID](#accessing-the-connection-socket-id)
 - [Resolve Common Issues](#resolve-common-issues)
+
 ## Installation
 
 Add to your pubspec.yaml
 
 ```yaml
 dependencies:
-    pusher_client_fixed: ^0.0.1
+  pusher_client_fixed: ^0.0.4
 ```
 
 ## Configuration
@@ -112,13 +113,13 @@ Then in `android/app/proguard-rules.pro`:
 ```
 
 If you got error like that:
+
 ```java
 java.io.IOException: Cleartext HTTP traffic to 192.168.1.105 not permitted
 ...
 ```
 
 just follow this solution on [StackOverFlow](https://stackoverflow.com/questions/45940861/android-8-cleartext-http-traffic-not-permitted).
-
 
 ## API Overview
 
@@ -169,8 +170,8 @@ pusher.unsubscribe("private-orders");
 pusher.disconnect();
 
 ```
-More information in reference format can be found below.
 
+More information in reference format can be found below.
 
 ## The Pusher Constructor
 
@@ -179,7 +180,6 @@ The constructor takes an application key which you can get from the app's API Ac
 ```dart
 PusherClient pusher = PusherClient(YOUR_APP_KEY, PusherOptions());
 ```
-
 
 If you are going to use [private](https://pusher.com/docs/channels/using_channels/private-channels), [presence](https://pusher.com/docs/channels/using_channels/presence-channels) or [encrypted](https://pusher.com/docs/channels/using_channels/encrypted-channels) channels then you will need to provide a `PusherAuth` to be used when authenticating subscriptions. In order to do this you need to pass in a `PusherOptions` object which has had an `auth` set.
 
@@ -216,18 +216,18 @@ If auto connect is disabled then you can manually connect using `connect()` on t
 
 Most of the functionality of this plugin is configured through the PusherOptions object. You configure it by setting parameters on the object before passing it to the Pusher client. Below is a table containing all of the properties you can set.
 
-| Method                      | Parameter         | Description                                                                                                                                   |
-|-----------------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| encrypted                | bool           | Whether the connection should be made with TLS or not.                                                                                   |
-| auth              | PusherAuth | Sets the authorization options to be used when authenticating private, private-encrypted and presence channels.                                                             |
-| host                     | String            | The host to which connections will be made.                                                                                                   |
-| wsPort                   | int               | The port to which unencrypted connections will be made. Automatically set correctly.                                                          |
-| wssPort                  | int               | The port to which encrypted connections will be made. Automatically set correctly.                                                            |
-| cluster                  | String            | Sets the cluster the client will connect to, thereby setting the Host and Port correctly.                                                     |
-| activityTimeout          | int              | The number of milliseconds of inactivity at which a "ping" will be triggered to check the connection. The default value is 120,000.           |
-| pongTimeout              | int              | The number of milliseconds the client waits to receive a "pong" response from the server before disconnecting. The default value is 30,000.   |
-| maxReconnectionAttempts  | int               | Number of reconnection attempts that will be made when `pusher.connect()` is called, after which the client will give up.                       |
-| maxReconnectGapInSeconds | int               | The delay in two reconnection extends exponentially (1, 2, 4, .. seconds) This property sets the maximum inbetween two reconnection attempts. |
+| Method                   | Parameter  | Description                                                                                                                                   |
+| ------------------------ | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| encrypted                | bool       | Whether the connection should be made with TLS or not.                                                                                        |
+| auth                     | PusherAuth | Sets the authorization options to be used when authenticating private, private-encrypted and presence channels.                               |
+| host                     | String     | The host to which connections will be made.                                                                                                   |
+| wsPort                   | int        | The port to which unencrypted connections will be made. Automatically set correctly.                                                          |
+| wssPort                  | int        | The port to which encrypted connections will be made. Automatically set correctly.                                                            |
+| cluster                  | String     | Sets the cluster the client will connect to, thereby setting the Host and Port correctly.                                                     |
+| activityTimeout          | int        | The number of milliseconds of inactivity at which a "ping" will be triggered to check the connection. The default value is 120,000.           |
+| pongTimeout              | int        | The number of milliseconds the client waits to receive a "pong" response from the server before disconnecting. The default value is 30,000.   |
+| maxReconnectionAttempts  | int        | Number of reconnection attempts that will be made when `pusher.connect()` is called, after which the client will give up.                     |
+| maxReconnectGapInSeconds | int        | The delay in two reconnection extends exponentially (1, 2, 4, .. seconds) This property sets the maximum inbetween two reconnection attempts. |
 
 ## Reconnecting
 
@@ -254,6 +254,7 @@ The default method for subscribing to a channel involves invoking the subscribe 
 ```dart
 Channel channel = pusher.subscribe("my-channel");
 ```
+
 This returns a `Channel` object, which events can be bound to.
 
 ### Private Channels
@@ -299,12 +300,12 @@ channel.bind("order-status-updated", (PusherEvent event) {
 
 The callbacks you bind receive a `PusherEvent`:
 
-|  Property            | Type           | Description  |
-| ------------------ |--------------| ------------
-| `eventName`       | `String`      | The name of the event. |
-| `channelName`   | `String`    | The name of the channel that the event was triggered on. (Optional) |
-| `data`                | `String`     | The data that was passed to `trigger`, encoded as a string. If you passed an object then that will have been serialized to a JSON string which you can parse as necessary. (Optional)|
-| `userId`            | `String`     | The ID of the user who triggered the event. This is only available for client events triggered on presence channels. (Optional)|
+| Property      | Type     | Description                                                                                                                                                                           |
+| ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `eventName`   | `String` | The name of the event.                                                                                                                                                                |
+| `channelName` | `String` | The name of the channel that the event was triggered on. (Optional)                                                                                                                   |
+| `data`        | `String` | The data that was passed to `trigger`, encoded as a string. If you passed an object then that will have been serialized to a JSON string which you can parse as necessary. (Optional) |
+| `userId`      | `String` | The ID of the user who triggered the event. This is only available for client events triggered on presence channels. (Optional)                                                       |
 
 ### Unbind Channel Events
 
@@ -332,7 +333,6 @@ channel.bind("pusher:subscription_succeeded", (PusherEvent event) {
 
 For full details see the [client events documentation](https://pusher.com/docs/channels/using_channels/events#triggering-client-events).
 
-
 ## Accessing The Connection Socket ID
 
 Once connected you can access a unique identifier for the current client's connection. This is known as the **socket Id**. You can access the value once the connection has been established as follows:
@@ -349,7 +349,6 @@ For more information on how and why there is a socket Id see the documentation o
 
 iOS logging doesn't seem to output to flutter console, however if you run the
 app from Xcode you should be able to see the logs.
-
 
 ### Subscribing to private channels with iOS
 
