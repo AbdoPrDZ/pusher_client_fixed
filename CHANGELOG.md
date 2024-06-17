@@ -66,3 +66,7 @@
 
 - Fix IOS - Update PusherSwiftWithEncryption to 10.1.5.
 - Upgrade Flutter SDK version.
+
+## 0.0.4+1 - Juan 17, 2024
+
+- Upgrade Flutter SDK version.
