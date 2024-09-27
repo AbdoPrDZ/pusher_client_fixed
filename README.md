@@ -12,6 +12,10 @@ For tutorials and more in-depth information about Pusher Channels, visit the [of
 
 This client works with official pusher servers and laravel self hosted pusher websocket server ([laravel-websockets](https://github.com/beyondcode/laravel-websockets)).
 
+`````## Note:
+
+There is a new package that works on all platforms [pusher_client_socket](https://github.com/AbdoPrDZ/pusher_client_socket), support for this library will be reduced or stopped from now on to provide a better alternative````
+
 ## Supported Platforms & Deployment Targets
 
 - Android API 16 and above
@@ -380,3 +384,4 @@ If you know which domains you will connect to add:
     </dict>
 </dict>
 ```
+`````
