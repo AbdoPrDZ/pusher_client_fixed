@@ -3,7 +3,7 @@
 [![pub version](https://img.shields.io/pub/v/pusher_client_fixed.svg?logo=dart)](https://pub.dartlang.org/packages/pusher_client_fixed)
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/AbdoPrDZ/pusher_client_fixed/main/LICENSE)
 ![Languages](https://img.shields.io/badge/languages-dart%20%7C%20kotlin%20%7C%20swift-blueviolet.svg)
-[![Twitter](https://img.shields.io/badge/twitter-@Abdo_Pr_2137-blue.svg?style=flat&logo=twitter)](https://twitter.com/Abdo_Pr_2137)
+[![Twitter](https://img.shields.io/badge/twitter-@abdoprdz-blue.svg?style=flat&logo=twitter)](https://twitter.com/abdoprdz)
 
 A Pusher Channels client plugin for Flutter targeting Android and iOS. It wraps
 [pusher-websocket-java](https://github.com/pusher/pusher-websocket-java) v2.2.5 and [pusher-websocket-swift](https://github.com/pusher/pusher-websocket-swift) v8.0.0.
@@ -12,9 +12,9 @@ For tutorials and more in-depth information about Pusher Channels, visit the [of
 
 This client works with official pusher servers and laravel self hosted pusher websocket server ([laravel-websockets](https://github.com/beyondcode/laravel-websockets)).
 
-`````## Note:
+## Note:
 
-There is a new package that works on all platforms [pusher_client_socket](https://github.com/AbdoPrDZ/pusher_client_socket), support for this library will be reduced or stopped from now on to provide a better alternative````
+There is a new package that works on all platforms [pusher_client_socket](https://github.com/AbdoPrDZ/pusher_client_socket), support for this library will be reduced or stopped from now on to provide a better alternative
 
 ## Supported Platforms & Deployment Targets
 
@@ -384,4 +384,3 @@ If you know which domains you will connect to add:
     </dict>
 </dict>
 ```
-`````

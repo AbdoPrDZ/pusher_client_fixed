@@ -75,3 +75,8 @@
 
 - Update compileSdk version.
 - Added Notice on Reduced/Stopped Support in Favor of New Package.
+
+## 0.0.5 - May 02, 2025
+
+- Update Sdk version.
+- fix namespace in android project by [@ahmedelmwafy](https://github.com/ahmedelmwafy).
