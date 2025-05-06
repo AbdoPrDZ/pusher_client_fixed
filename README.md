@@ -110,6 +110,20 @@ buildTypes {
 }
 ```
 
+If you build.gradle.kts, you need to add the following rule in `android/app/build.gradle`:
+
+```gradle
+buildTypes {
+  release {
+            isMinifyEnabled = false
+            isShrinkResources = false
+
+    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+  }
+}
+```
+
+
 Then in `android/app/proguard-rules.pro`:
 
 ```pro
